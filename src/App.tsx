@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import FileSelector from './components/FileSelector';
 
 function App() {
   return (
@@ -19,6 +20,11 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <div>
+        <FileSelector></FileSelector>
+      </div>
+
     </div>
   );
 }
