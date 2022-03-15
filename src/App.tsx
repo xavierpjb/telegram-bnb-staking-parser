@@ -2,8 +2,12 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import FileSelector from './components/FileSelector';
+import {log4TSProvider} from "./config/LogConfig";
 
+const log = log4TSProvider.getLogger("app")
 function App() {
+  log.trace("Starting app")
+
   return (
     <div className="App">
       <header className="App-header">
