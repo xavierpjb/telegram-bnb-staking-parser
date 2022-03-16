@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import FileSelector from './components/FileSelector';
 import {log4TSProvider} from "./config/LogConfig";
+import Home from './components/Home';
 
 const log = log4TSProvider.getLogger("app")
 function App() {
@@ -25,9 +25,7 @@ function App() {
         </a>
       </header>
 
-      <div>
-        <FileSelector></FileSelector>
-      </div>
+      <Home></Home>
 
     </div>
   );
