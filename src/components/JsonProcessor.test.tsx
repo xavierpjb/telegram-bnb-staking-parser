@@ -45,12 +45,12 @@ describe('Telegram export processing', () => {
       aria-label="stakingMessages"
     >
       <li>
-        2021-12-09T05:00:00.000Z
+        2021-12-09T00:00:00.000Z
         : 
         0.00292682
       </li>
       <li>
-        2022-01-26T05:00:00.000Z
+        2022-01-26T00:00:00.000Z
         : 
         0.00109348
       </li>

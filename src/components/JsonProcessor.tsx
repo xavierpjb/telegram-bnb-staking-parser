@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {log4TSProvider} from "../config/LogConfig";
 import {TelegramMessage, TelegramSubtext} from "../models/Telegram-Export.model";
 import {StakingReward} from "../models/StakeReward.model";
+import moment from 'moment'
 
 const log = log4TSProvider.getLogger("jsonProcessor")
 class JsonProcessor extends Component<{tgMessages: TelegramMessage[]}> {
@@ -56,7 +57,8 @@ class JsonProcessor extends Component<{tgMessages: TelegramMessage[]}> {
     const dateSubText = message.text
       .slice(JsonProcessor.dateTextPositionRange.start,
         JsonProcessor.dateTextPositionRange.end)[0] as TelegramSubtext
-    return new Date(dateSubText.text)
+
+    return moment.utc(dateSubText.text, 'YYYY-M-D').toDate()
   }
 
   parseAmount(message: TelegramMessage) {
