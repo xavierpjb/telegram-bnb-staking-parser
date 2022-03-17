@@ -14,6 +14,8 @@ type TelegramMessage = {
   text: TelegramText[]
 }
 
-type TelegramText = string | {type:string, text:string}
+type TelegramText = string | TelegramSubtext
 
-export type {TelegramExport, TelegramMessage, TelegramText};
+type TelegramSubtext = {type:string, text:string}
+
+export type {TelegramExport, TelegramMessage, TelegramText, TelegramSubtext};
