@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {log4TSProvider} from "../config/LogConfig";
-import {TelegramExport, TelegramMessage, TelegramText} from "../models/Telegram-Export.model";
+import {TelegramMessage} from "../models/Telegram-Export.model";
 
 const log = log4TSProvider.getLogger("jsonProcessor")
 class JsonProcessor extends Component<{tgMessages: TelegramMessage[]}> {
