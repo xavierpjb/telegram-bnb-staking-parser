@@ -35,4 +35,27 @@ describe('Telegram export processing', () => {
 
   })
 
+  test('Parsing Validation', () => {
+    render(<JsonProcessor tgMessages={mockTGMessages} />)
+    const stakinglist = screen.getByRole("list", {
+      name: /stakingMessages/i
+    });
+    expect(stakinglist).toMatchInlineSnapshot(`
+    <ul
+      aria-label="stakingMessages"
+    >
+      <li>
+        2021-12-09T00:00:00.000Z
+        : 
+        0.00292682
+      </li>
+      <li>
+        2022-01-26T00:00:00.000Z
+        : 
+        0.00109348
+      </li>
+    </ul>
+    `)
+  })
+
 })
