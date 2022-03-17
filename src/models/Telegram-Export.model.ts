@@ -1,4 +1,4 @@
-type TelegramChat = {
+type TelegramExport = {
   name: string
   type: string
   id: number
@@ -14,11 +14,6 @@ type TelegramMessage = {
   text: TelegramText[]
 }
 
-type TelegramText = {
-  token: string | Subtext
-}
-type Subtext = {
-  type: string
-  text: string
-}
-export type {TelegramChat, TelegramMessage, TelegramText, Subtext};
+type TelegramText = string | {type:string, text:string}
+
+export type {TelegramExport, TelegramMessage, TelegramText};

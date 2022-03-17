@@ -5,7 +5,7 @@ import FileSelector from './FileSelector';
 describe('File Selection', () => {
 
   test('renders upload button', () => {
-    render(<FileSelector />);
+    render(<FileSelector onValidTGExport={() => {}} onInvalidTGExport={() => {}} />);
     const linkElement = screen.getByTestId('json-input');
     expect(linkElement).toBeInTheDocument();
     expect(linkElement).toHaveAttribute("type", "file")
@@ -13,10 +13,18 @@ describe('File Selection', () => {
   });
 
   describe('Json validation', () => {
+    let mockValidFunc = jest.fn(()=>{})
+    let mockInvalidFunc= jest.fn(() => {});
+    
+    beforeEach(() => {
+      mockValidFunc = jest.fn(()=>{})
+      mockInvalidFunc = jest.fn(()=>{})
+      render(<FileSelector onValidTGExport={mockValidFunc} onInvalidTGExport={mockInvalidFunc} />);
+    })
     test('valid Json', async () => {
       let validJson = '{"valid":"json"}'
       let file = new File([validJson], "valid.json", {type: "application/json"});
-      render(<FileSelector />)
+      
 
       let uploader = screen.getByTestId('json-input')
       await waitFor(() =>
@@ -26,13 +34,12 @@ describe('File Selection', () => {
       )
 
       await waitFor(() =>
-        expect(screen.getByText(validJson)).toBeInTheDocument()
+        expect(mockValidFunc.mock.calls.length).toBe(1)
       )
 
     });
     test('empty Json', async () => {
       let file = new File([''], "empty.json", {type: "application/json"});
-      render(<FileSelector />)
 
       let uploader = screen.getByTestId('json-input')
       await waitFor(() =>
@@ -42,7 +49,7 @@ describe('File Selection', () => {
       )
 
       await waitFor(() =>
-        expect(screen.getByText('null')).toBeInTheDocument()
+        expect(mockInvalidFunc.mock.calls.length).toBe(1)
       )
 
     })
@@ -50,7 +57,6 @@ describe('File Selection', () => {
     test('invalid Json', async () => {
       let invalidJson = 'invalid json'
       let file = new File([invalidJson], "valid.json", {type: "application/json"});
-      render(<FileSelector />)
 
       let uploader = screen.getByTestId('json-input')
       await waitFor(() =>
@@ -60,7 +66,7 @@ describe('File Selection', () => {
       )
 
       await waitFor(() =>
-        expect(screen.getByText('null')).toBeInTheDocument()
+        expect(mockInvalidFunc.mock.calls.length).toBe(1)
       )
 
     })
