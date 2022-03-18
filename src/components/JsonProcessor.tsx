@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {log4TSProvider} from "../config/LogConfig";
 import {TelegramMessage, TelegramSubtext} from "../models/Telegram-Export.model";
 import {StakingReward} from "../models/StakeReward.model";
+import StakingRewardView from './stakingRewardView/StakingRewardView';
 import moment from 'moment'
 
 const log = log4TSProvider.getLogger("jsonProcessor")
@@ -28,6 +29,8 @@ class JsonProcessor extends Component<{tgMessages: TelegramMessage[]}> {
 
     return (
       <div>
+        <StakingRewardView stakingRewards={stakingRewards} />
+
         Staking messages:
         <ul aria-label='stakingMessages'>
           {stakingRewards.map((message) =>
@@ -40,7 +43,6 @@ class JsonProcessor extends Component<{tgMessages: TelegramMessage[]}> {
         Ignored messages:
         <ul aria-label='ignoredMessages'>
           {ignoredMessages.map((message) => <li key={message.id}>{message.id}</li>)}
-
         </ul>
       </div>
     );
