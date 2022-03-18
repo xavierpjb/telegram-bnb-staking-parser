@@ -3,4 +3,8 @@ type StakingReward = {
   amount: number
 }
 
-export type {StakingReward};
+type StakingYearGroup = {
+  year: number
+  stakingRewards: StakingReward[]
+}
+export type {StakingReward, StakingYearGroup};
