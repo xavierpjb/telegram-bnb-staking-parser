@@ -24,7 +24,7 @@ class StakingRewardView extends Component<{stakingRewards: StakingReward[]}> {
     log.debug("Grouping by years")
 
     let groups: StakingYearGroup[] = []
-    if (stakingRewards.length == 0) return groups
+    if (stakingRewards.length === 0) return groups
 
     let currYear = stakingRewards[0].date.getUTCFullYear()
     groups.push({year: currYear, stakingRewards: []})
@@ -32,7 +32,7 @@ class StakingRewardView extends Component<{stakingRewards: StakingReward[]}> {
     // This assumes a sorted staking reward list
     stakingRewards.forEach((reward) => {
       let rewardYear = reward.date.getUTCFullYear()
-      if (rewardYear != currYear) {
+      if (rewardYear !== currYear) {
         currYear = rewardYear
         groups.push({year: currYear, stakingRewards: []})
       }
