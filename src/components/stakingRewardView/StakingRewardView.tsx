@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {log4TSProvider} from "../../config/LogConfig";
 import {StakingReward, StakingYearGroup} from "../../models/StakeReward.model";
+import {StakingRewardExport, Format} from './StakingRewardExport';
 
 const log = log4TSProvider.getLogger("stakingRewardsView")
 class StakingRewardView extends Component<{stakingRewards: StakingReward[]}> {
@@ -14,7 +15,12 @@ class StakingRewardView extends Component<{stakingRewards: StakingReward[]}> {
     return (
       <div>
         <ul aria-label="groupByYear">
-          {stakingGroups.map((group) => <li key={group.year}>{group.year}</li>)}
+          {stakingGroups.map((group) => 
+            <li key={group.year}>
+              <StakingRewardExport stakingYearGroup={group}
+                format={Format.CoinLedger} />
+            </li>
+          )}
         </ul>
       </div>
     )
