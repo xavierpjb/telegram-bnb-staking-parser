@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {log4TSProvider} from "./config/LogConfig";
 import Home from './components/Home';
