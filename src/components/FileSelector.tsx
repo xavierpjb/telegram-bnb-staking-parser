@@ -47,14 +47,12 @@ class FileSelector extends Component<FileSelectProps> {
     log.debug("Render fileSelector");
 
     return (
-      <div>
         <input
           type="file"
           onChange={this.onFileChange}
           accept="application/json"
           data-testid="json-input"
         />
-      </div>
     );
   }
 
