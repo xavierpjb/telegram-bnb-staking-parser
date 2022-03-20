@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/telegram-bnb-staking-parser/static/css/main.e6c13ad2.css",
-    "main.js": "/telegram-bnb-staking-parser/static/js/main.fde2f9b5.js",
+    "main.css": "/telegram-bnb-staking-parser/static/css/main.acae851b.css",
+    "main.js": "/telegram-bnb-staking-parser/static/js/main.b7d837d9.js",
     "static/js/787.c098e32e.chunk.js": "/telegram-bnb-staking-parser/static/js/787.c098e32e.chunk.js",
     "index.html": "/telegram-bnb-staking-parser/index.html",
-    "main.e6c13ad2.css.map": "/telegram-bnb-staking-parser/static/css/main.e6c13ad2.css.map",
-    "main.fde2f9b5.js.map": "/telegram-bnb-staking-parser/static/js/main.fde2f9b5.js.map",
+    "main.acae851b.css.map": "/telegram-bnb-staking-parser/static/css/main.acae851b.css.map",
+    "main.b7d837d9.js.map": "/telegram-bnb-staking-parser/static/js/main.b7d837d9.js.map",
     "787.c098e32e.chunk.js.map": "/telegram-bnb-staking-parser/static/js/787.c098e32e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.fde2f9b5.js"
+    "static/css/main.acae851b.css",
+    "static/js/main.b7d837d9.js"
   ]
 }
