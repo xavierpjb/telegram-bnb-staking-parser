@@ -13,9 +13,12 @@ class StakingRewardView extends Component<{stakingRewards: StakingReward[]}> {
     if (stakingGroups.length === 0) return (null)
 
     return (
-      <div>
-        <ul aria-label="groupByYear">
-          {stakingGroups.map((group) => 
+      <div className="">
+        <ul
+          aria-label="groupByYear"
+          className="flex flex-wrap"
+        >
+          {stakingGroups.map((group) =>
             <li key={group.year}>
               <StakingRewardExport stakingYearGroup={group}
                 format={Format.CoinLedger} />
