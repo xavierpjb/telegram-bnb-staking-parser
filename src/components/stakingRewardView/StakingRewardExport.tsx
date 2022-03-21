@@ -25,7 +25,11 @@ class StakingRewardExport extends Component<StakingRewardExportProps>{
           {this.props.stakingYearGroup.year}
         </h4>
         <button 
-        className="mt-2 bg-amber-300 hover:bg-amber-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+        className="mt-2 bg-amber-300 
+          hover:bg-amber-500 focus:ring-4 focus:ring-yellow-300 
+          rounded-lg 
+          px-5 py-2.5
+          font-medium text-sm text-center"
         onClick={this.onExport}
         >Export</button>
       </div>

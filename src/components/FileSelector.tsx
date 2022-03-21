@@ -52,6 +52,11 @@ class FileSelector extends Component<FileSelectProps> {
           onChange={this.onFileChange}
           accept="application/json"
           data-testid="json-input"
+          className="file:mt-2 file:bg-amber-300
+            hover:file:bg-amber-500 focus:file:ring-4 focus:file:ring-yellow-300
+            file:rounded-lg file:border-0
+            file:px-5 file:py-2.5
+            file:font-medium file:text-sm file:text-center"
         />
     );
   }
