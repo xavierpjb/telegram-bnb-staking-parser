@@ -9,7 +9,7 @@ function App() {
   log.trace("Starting app")
 
   return (
-    <div className="bg-amber-300 p-10">
+    <div className="min-h-screen bg-amber-300 p-10">
       <h2 className="font-bold text-4xl">
         BNB Telegram staking tax csv generator 
       </h2>
