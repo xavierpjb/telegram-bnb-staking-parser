@@ -11,7 +11,7 @@ class TelegramExportInstructions extends Component {
           <h3 className="font-bold text-xl mb-2">Export Telegram chat to json</h3>
           <ul className="p-2 list-disc">
             <li>
-              Download <a href="https://desktop.telegram.org/">telegram for desktop </a>
+              Download <a className="underline text-amber-400 hover:text-amber-600" href="https://desktop.telegram.org/">telegram for desktop </a>
               (Note: export feature is not available on telegram from mac app store,
               so you have to dowload the desktop version)
             </li>
