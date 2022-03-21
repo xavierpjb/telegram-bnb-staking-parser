@@ -17,9 +17,17 @@ const log = log4TSProvider.getLogger("stakingRewardsView")
 class StakingRewardExport extends Component<StakingRewardExportProps>{
   render() {
     return (
-      <div>
-        {this.props.stakingYearGroup.year}
-        <button onClick={this.onExport}>Export</button>
+      <div className="border-solid border-2 border-yellow-300 
+      rounded-lg shadow-lg
+      p-5 mr-5 mb-5 grid grid-cols-1"
+      >
+        <h4 className="font-medium text-center">
+          {this.props.stakingYearGroup.year}
+        </h4>
+        <button 
+        className="mt-2 bg-amber-300 hover:bg-amber-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+        onClick={this.onExport}
+        >Export</button>
       </div>
     )
   }
