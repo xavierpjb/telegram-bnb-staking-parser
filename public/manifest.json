@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "BNB Telegram CSV Generator",
+  "name": "Generate BNB CSV file from Telegram",
   "icons": [
     {
       "src": "favicon.ico",
